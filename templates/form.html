@@ -1,0 +1,50 @@
+<!doctype html>
+
+<html> 
+<head>
+    <meta charset="utf-8" />
+    {% if story_id %}
+        <title>Super Sprinter 3000 - Edit Story</title>
+    {% else %}
+        <title>Super Sprinter 3000 - Add New Story</title>
+    {% endif %}   
+</head>
+<body>
+
+    <form action="story_list.csv" methods = ["GET","POST"]>
+        <p>Story Title:</p>
+        <p><input type="text" name="story_title" style="height:20px;width:700px;" id="story_title"></p>
+        
+        
+        <p>User Story:</p>
+        <p><input type="text" name="user_story" style="height:100px;width:700px;text-align:start;" id="user_story"></p>
+        
+        <p>Acceptance Criteria:</p>
+        <p><p><input type="text" name="acceptance" style="height:100px;width:700px;text-align:start;" id="acceptance"></p>
+
+        <p>Business Value: <br>
+    	    <input type="number" name="buisness" min="100" max="1500" step="100" id="buisness"</p></p>
+
+        <p>Estimation(hour): <br>
+            <input type="number" name="estimation" min="0.5" max="40" step="0.5" id="estimation"</p>
+
+        <p>Status: <br>
+            <select name="status" id="status">
+            <option selected>Planning</option>
+    	    <option value="TODO">TODO</option>
+    	    <option value="In Progress">In Progress</option>
+            <option value="Review">Review</option>
+    	    <option value="Done">Done</option>
+        </select></p>
+
+    {% if story_id %}
+        <p><input type="submit" value="UPDATE" id="updated" formmethod="post"></p>
+    {% else %}
+        <p><input type="submit" value="CREATE" id="created" formmethod="post"></p>
+    {% endif %}   
+        
+
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>User Story Manager</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 2px black solid;
+            font: 12px sans-serif;
+        }
+
+        td {
+            border: 1px black solid;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <form action='/story'>
+    <input type="submit" value="Add a new story">
+    </form>
+
+     <table>
+          <thead>
+               {% for name in fieldnames %}
+                <tr>
+                    <th>{{ name }}</th>
+                </tr>
+            </thead>
+            <tbody>
+             # iterate over every row and every item
+            {% for row in story_list %}
+                <tr>
+                    {% for item in row %}
+                    <td>{{ item }}</td>
+                    {% endfor %}
+                    <a href="/story/<story_id>"
+                    <img border="0" alt="pen" img src="pencil.png" width="20" height="20">    
+                    <a href=""
+                    <img border="0" alt="pen" img src="bin.png" width="20" height="20"> 
+                </tr>
+            {% endfor %}
+            </tbody>
+     </table>
+ </body>
+ </html>
+
+  
